@@ -9,7 +9,30 @@ repositories {
   mavenCentral()
 }
 
-dependencies {
-	checkstyle "com.puppycrawl.tools:checkstyle:8.25"
+checkstyle {
+    configProperties 'workspace_loc': project.projectDir
+    toolVersion = '8.25' 
+    showViolations = true
+    ignoreFailures = false
 }
 
+dependencies {
+    checkstyle "com.puppycrawl.tools:checkstyle:${project.extensions.checkstyle.toolVersion}"
+    // AC-change-no remedy
+    //  checkstyle group: 'com.thomasjensen.checkstyle.addons', name: 'checkstyle-addons-java8b', version: '7.0.1' 
+        checkstyle group: 'com.github.sevntu-checkstyle', name: 'sevntu-checks', version: '1.37.0'
+}
+
+tasks.register('checkstyle').configure {
+    description = 'Runs all Checkstyle tasks'
+    group = LifecycleBasePlugin.VERIFICATION_GROUP
+    dependsOn tasks.withType(Checkstyle)
+}
+
+project.extensions.checkstyle.sourceSets.each { SourceSet s ->
+    tasks.named(s.getTaskName('checkstyle', null)).configure { Checkstyle task ->
+        task.setGroup(LifecycleBasePlugin.VERIFICATION_GROUP)
+        task.setSource(s.allSource)
+        getLogger().info("Reconfigured task \'${task.name}\' to include *all* files in sourceSet \'${s.name}\'")
+    }
+}
