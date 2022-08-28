@@ -19,9 +19,6 @@ checkstyle {
 
 dependencies {
     checkstyle "com.puppycrawl.tools:checkstyle:${project.extensions.checkstyle.toolVersion}"
-    // AC-change-no remedy
-    //  checkstyle group: 'com.thomasjensen.checkstyle.addons', name: 'checkstyle-addons-java8b', version: '7.0.1' 
-        checkstyle group: 'com.github.sevntu-checkstyle', name: 'sevntu-checks', version: '1.37.0'
 }
 
 tasks.register('checkstyle').configure {
