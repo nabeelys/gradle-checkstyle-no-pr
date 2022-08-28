@@ -1,3 +1,22 @@
 {
-  "settingsInheritedFrom": "Gal-Doron/whitesource-config@main"
+  "scanSettings": {
+    "configMode": "AUTO",
+    "configExternalURL": "",
+    "baseBranches": []
+  },
+  "checkRunSettings": {
+    "vulnerableCheckRunConclusionLevel": "failure",
+    "displayMode": "diff"
+  },
+  "issueSettings": {
+    "minSeverityLevel": "LOW",
+    "issueType": "DEPENDENCY"
+  },
+  "remediateSettings": {
+    "workflowRules": {
+      "enabled": trueת
+      "minVulnerabilityScore": 1.5,
+       "maxVulnerabilityScore": 10
+    }
+  }
 }
