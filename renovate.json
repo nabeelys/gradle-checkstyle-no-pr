@@ -2,5 +2,36 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
-  ]
+  ],
+  "packageRules": [
+		{
+			"matchDatasources": [
+				"maven"
+			],
+			"matchPackageNames": [
+				"com.puppycrawl.tools:checkstyle"
+			],
+			"matchCurrentVersion": "8.25",
+			"allowedVersions": "[8.38,)",
+			"vulnerabilityAlert": true,
+			"enabled": true,
+			"ignoreUnstable": false,
+			"groupName": null,
+			"schedule": [],
+			"dependencyDashboardApproval": false,
+			"labels": [
+				"security fix"
+			],
+			"prBodyTemplate": "{{{table}}}{{{notes}}}{{{changelogs}}}{{{controls}}}",
+			"prBodyNotes": [
+				"By merging this PR, the issue #3 will be automatically resolved and closed:\n\n| Severity           | <a href=\"#\"><img src='https://whitesource-resources.whitesourcesoftware.com/cvss3.png' width=19 height=20></a> CVSS Score       |CVE  |\n|---|---|---|\n| ![Medium](https://whitesource-resources.whitesourcesoftware.com/medium_vul_bb.png) Medium | 5.3 | [CVE-2019-10782](https://www.mend.io/vulnerability-database/CVE-2019-10782) |\n| ![Low](https://whitesource-resources.whitesourcesoftware.com/low_vul_bb.png) Low | 3.3 | [CVE-2020-8908](https://www.mend.io/vulnerability-database/CVE-2020-8908) |\n"
+			],
+			"isVulnerabilityAlert": true,
+			"commitMessageSuffix": "",
+			"suppressNotifications": [
+				"prIgnoreNotification",
+				"prEditNotification"
+			]
+		}
+	]
 }
