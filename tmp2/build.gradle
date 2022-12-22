@@ -86,7 +86,7 @@ dependencies {
 //  implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.6.1'
 //  implementation group: 'org.springframework', name: 'spring-beans', version: '5.1.5.RELEASE' // fixed version '5.3.20.RELEASE' vulnarable '5.1.5.RELEASE'
 	
-    testImplementation group: 'junit', name: 'junit', version: '3.2.0'
+    testImplementation group: 'junit', name: 'junit', version: '3.8.2'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.11.2'
 
     jacocoRuntime "org.jacoco:org.jacoco.agent:${jacoco.toolVersion}:runtime"
