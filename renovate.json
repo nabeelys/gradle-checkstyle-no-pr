@@ -3,6 +3,12 @@
 	"extends": [
 		"config:base"
 	],
+	"enabledManagers": [
+		"",
+		"maven",
+		"gradle",
+		"npm"
+	],
 	"packageRules": [
 		{
 			"matchDatasources": [
