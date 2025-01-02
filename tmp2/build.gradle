@@ -133,12 +133,12 @@ gradlePlugin.testSourceSets(sourceSets.testUtil, sourceSets.functionalTest)
 
 dependencies {
     testUtilImplementation group: 'junit', name: 'junit', version: '4.13.2'
-    testUtilImplementation group: 'commons-io', name: 'commons-io', version: '2.10.0'
+    testUtilImplementation group: 'commons-io', name: 'commons-io', version: '2.18.0'
 
     testImplementation sourceSets.testUtil.output
 
     functionalTestImplementation group: 'junit', name: 'junit', version: '4.13.2'
-    functionalTestImplementation group: 'commons-io', name: 'commons-io', version: '2.10.0'
+    functionalTestImplementation group: 'commons-io', name: 'commons-io', version: '2.18.0'
     functionalTestImplementation group: 'org.tools4j', name: 'tools4j-spockito', version: '1.6'
     functionalTestImplementation sourceSets.testUtil.output
 }
