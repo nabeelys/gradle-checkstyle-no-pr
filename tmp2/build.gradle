@@ -200,7 +200,7 @@ checkstyle {
     configProperties 'workspace_loc': project.projectDir
  // AC-change- low severity
  //ATTN  Gal Doron - to reproduce issie change version to 8.25. it creates isseu but not suggest autoremediation - was 8.38
-    toolVersion = '8.25' // AC-change checkstile version  found in 8.25    fixed 8.29 and  8.38
+    toolVersion = '8.38' // AC-change checkstile version  found in 8.25    fixed 8.29 and  8.38
     showViolations = true
     ignoreFailures = false
 }
